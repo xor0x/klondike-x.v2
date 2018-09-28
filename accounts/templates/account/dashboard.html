@@ -1,0 +1,81 @@
+{% extends "blog/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Dashboard</h1>
+
+    <div class="container bootstrap snippet">
+      <div class="row">
+        <div class="col-sm-10"><h1>{{ user.profile.user }}</h1></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><!--left col-->
+
+
+          <div class="text-center">
+            <img src="{{ user.profile.photo.url }}" class="avatar img-circle img-thumbnail" alt="avatar" height="200" width="200">
+          </div></hr><br>
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><a href="{% url "dashboard" %}">Profile</a> <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="{% url "edit" %}">Edit profile</a></div>
+            <div class="panel-body"><a href="{% url "password_change" %}">Change Password</a></div>
+          </div>
+
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+              <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div>
+
+        </div><!--/col-3-->
+        <div class="col-sm-9">
+          {% block profile %}
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+              <hr>
+                <div class="form-group">
+
+                  <div class="col-xs-6">
+                    <label for="first_name"><h4>First name</h4></label>
+                    <h5>{{ user.first_name }}</h5>
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <div class="col-xs-6">
+                    <label for="last_name"><h4>Last name</h4></label>
+                    <h5>{{ user.last_name }}</h5>
+                  </div>
+                </div>
+
+                <div class="col-xs-6">
+                  <label for="email"><h4>Email</h4></label>
+                  <h5>{{ user.email }}</h5>
+                </div>
+              </div>
+              <div class="form-group">
+
+                <div class="col-xs-6">
+                  <label for="email"><h4>Date of Birth</h4></label>
+                  <h5>{{ user.profile.date_of_birth }}</h5>
+                </div>
+              </div>
+          </div>
+          {% endblock %}
+        </div>
+
+          <hr>
+
+
+          {% endblock %}

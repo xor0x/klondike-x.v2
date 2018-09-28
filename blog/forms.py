@@ -12,4 +12,14 @@ class EmailPostForm(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = {'name', 'email', 'body'}
+        fields = {'body'}
+
+    def clean_body(self):
+        body = self.cleaned_data['body']
+        return body
+
+
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField()
