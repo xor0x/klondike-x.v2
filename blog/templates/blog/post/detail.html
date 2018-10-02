@@ -98,24 +98,19 @@
         <h2>Add a Comment</h2>
     </div>
     <!--Entity Title -->
-
+    {% if new_comment %}
+    <h2>Your comment has been added.</h2>
+    {% else %}
     <div class="entity_comment_from">
-      {% if empty %}
-      <div class="container">
-        <div class="alert alert-danger" role="alert">
-          Enter
-        </div>
-      </div>
-      <br>
-      {% endif %}
       <form action="." method="post">
       {{ comment_form.as_p }}
       {% csrf_token %}
       <p><input type="submit" value="Add comment"></p>
     </div>
+    {% endif %}
     <!--Entity Comments From -->
     {% else %}
-    <h2>Please <a href="{% url 'signup' %}" class="genric-btn success-border circle">Signup</a> to view/add comments</h2>
+    <h2>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</h2>
     {% endif %}
 </div>
 
