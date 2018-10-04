@@ -42,6 +42,10 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
+RECAPTCHA_PRIVATE_KEY = '6LfhhXMUAAAVwZ29Hx87i'
+RECAPTCHA_PUBLIC_KEY = '6LfhhXMUEhv8Eyrpa39uh1cSMNe'
+
+
 # Application definition
 
 
@@ -61,6 +65,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'ckeditor',
     'ckeditor_uploader',
+    'snowpenguin.django.recaptcha2',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"

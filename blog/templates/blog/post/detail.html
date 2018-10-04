@@ -1,5 +1,6 @@
 
 {% extends 'blog/base.html' %}
+{% load recaptcha2 %}
 {% load blog_tags %}
 {% block title %}
 - {{ post.title }}
@@ -25,7 +26,7 @@
     </a>
 </div>
 <!-- entity_social -->
-
+{% recaptcha_init %}
 
       <div class="entity_thumb">
           <img class="img-responsive" src="{{ post.image.url }}" height="200" width="350" alt="feature-top">
@@ -106,6 +107,7 @@
       {{ comment_form.as_p }}
       {% csrf_token %}
       <p><input type="submit" value="Add comment"></p>
+    </form>
     </div>
     {% endif %}
     <!--Entity Comments From -->
