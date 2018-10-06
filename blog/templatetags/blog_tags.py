@@ -19,7 +19,7 @@ def show_latest_posts(count=5):
 
 @register.inclusion_tag('blog/post/popular_posts.html')
 def show_popular_posts(count=5):
-    popular_posts = Post.objects.get_queryset().order_by('watch_total')[:count]
+    popular_posts = Post.published.get_queryset().order_by('watch_total', '-publish')[:count]
     return {'popular_posts':popular_posts}
 
 

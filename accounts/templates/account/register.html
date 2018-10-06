@@ -1,6 +1,8 @@
 {% extends "blog/base.html" %}
+{% load recaptcha2 %}
 {% block title %}Create an account{% endblock %}
 {% block content %}
+{% recaptcha_init %}
 <h1>Create an account</h1>
 <p>Please, sign up using the following form:</p>
 <form action="." method="post">
