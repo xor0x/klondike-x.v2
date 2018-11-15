@@ -32,6 +32,20 @@ LOGOUT_URL = 'logout'
 RECAPTCHA_PRIVATE_KEY = '6LfhhXMUAAAVwZ29Hx87i'
 RECAPTCHA_PUBLIC_KEY = '6LfhhXMUEhv8Eyrpa39uh1cSMNe'
 
+# Admin Suit Config
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Klondike-X Admin',
+    'CONFIRM_UNSAVED_CHANGES': True,
+    'LIST_PER_PAGE': 20,
+    'MENU_ICONS': {
+        'blog': 'icon-pencil',
+        'sites': 'icon-leaf',
+        'auth': 'icon-lock',
+        'accounts': 'icon-user',
+        'taggit': 'icon-tags',
+    }
+}
+
 # Ckeditor Config
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
