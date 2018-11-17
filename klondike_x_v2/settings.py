@@ -21,8 +21,8 @@ EMAIL_HOST_PASSWORD = '123456'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
-SITE_ID = 1
+#Config for SiteMap
+SITE_ID = 2
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
