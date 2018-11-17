@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post, Comment
+from .models import Post, Comment, BlockLinks
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 from .forms import EmailPostForm, CommentForm, SearchForm
@@ -20,6 +20,7 @@ class PostListView(ListView):
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
+    link_list = BlockLinks.objects.all()
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -34,7 +35,8 @@ def post_list(request, tag_slug=None):
         posts = paginator.page(paginator.num_pages)
     ctx = {'posts':posts,
             'page':page,
-            'tag':tag}
+            'tag':tag,
+            'link_list':link_list}
     return render(request, 'blog/post/list.html', ctx)
 
 

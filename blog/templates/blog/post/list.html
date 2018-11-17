@@ -69,7 +69,7 @@
 
       <div class="widget_body">
         <h3 class="media-heading">
-        {% show_latest_posts 3 %}
+        <p>{% show_latest_posts 3 %}</p>
       </h3>
       </div>
       <hr>
@@ -82,7 +82,7 @@
     <div class="media">
         <div class="media-body">
             <h3 class="media-heading">
-              {% show_popular_posts 3 %}
+              <p>{% show_popular_posts 3 %}</p>
             </h3>
         </div>
     </div>
@@ -102,12 +102,12 @@
               {% get_most_commented_posts as most_commented_posts %}
               <ul>
                 {% for post in most_commented_posts %}
-                <li>
+                <p><li>
                   <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                 </li>
                 <div class="media_social">
                     <span><i class="fa fa-comments-o"></i><a href="#">{{ post.comments.count }}</a> Comments</span>
-                </div>
+                </div></p>
                 {% endfor %}
               </ul>
             </h3>
@@ -118,8 +118,29 @@
 </div>
 <!-- Most Commented News -->
 
+<div class="widget m30">
+    <div class="widget_title widget_black">
+        <h2><a href="#">Links</a></h2>
+    </div>
+    <div class="media">
+        <div class="media-body">
+            <h3 class="media-heading">
+              <ul>
+                {% for link in link_list %}
+                <li>
+                  <p><a href="{{ link.url }}">{{ link.title }}</a></p>
+                </li>
 
-<!-- Editor News -->
+
+                {% endfor %}
+              </ul>
+            </h3>
+
+
+        </div>
+    </div>
+</div>
+<!-- Links -->
 
 
 

@@ -57,3 +57,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.author, self.post)
+
+
+class BlockLinks(models.Model):
+    title = models.CharField(max_length=150)
+    url = models.URLField(blank=True)
+
+    class Meta:
+        ordering = ('title',)
+        verbose_name = 'Link'
+
+    def __str__(self):
+        return self.title
