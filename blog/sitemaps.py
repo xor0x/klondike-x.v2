@@ -6,6 +6,7 @@ class PostSitemap(Sitemap):
     changefreq = 'weekly'
     priority = 0.9
     protocol = 'https'
+    #protocol = 'http'
 
     def items(self):
         return Post.published.all()
