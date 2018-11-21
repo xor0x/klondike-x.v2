@@ -14,6 +14,12 @@
         <!-- Single Blog Area  -->
         <div class="single-blog-area blog-style-2 mb-50">
             <div class="single-blog-thumbnail">
+              <a href="#" class="icons-sm sh-ic">
+        <i class="fa fa-share-alt"></i>
+        <a href="{% url "blog:post_share" post.id %}">
+        Share this post
+        </a>
+    </a>
                 <img src="{{ post.image.url }}" alt="">
             </div>
         </div>
@@ -108,7 +114,7 @@
                         {% endif %}
                         <!--Entity Comments From -->
                         {% else %}
-                        <h2>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</h2>
+                        <p>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</p>
                         {% endif %}
                     </div>
                 </div>
