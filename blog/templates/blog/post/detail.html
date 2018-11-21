@@ -1,4 +1,3 @@
-
 {% extends 'blog/base.html' %}
 {% load recaptcha2 %}
 {% load blog_tags %}
@@ -8,113 +7,112 @@
 
 {% block content %}
 
-  <div class="entity_wrapper">
-      <div class="entity_title">
-          <h1><a href="#">{{ post.title }}</a></h1>
-      </div>
-      <!-- entity_title -->
+    <!-- ##### Single Blog Area Start ##### -->
+    <div class="single-blog-wrapper section-padding-0-100">
 
-      <div class="entity_meta"><a href="#" target="_self">{{ post.publish }}</a>, by: <a href="#" target="_self">{{ post.author }}</a>
-      </div>
+        <!-- Single Blog Area  -->
+        <div class="single-blog-area blog-style-2 mb-50">
+            <div class="single-blog-thumbnail">
+                <img src="{{ post.image.url }}" alt="">
+            </div>
+        </div>
 
-      <div class="entity_social">
-    <a href="#" class="icons-sm sh-ic">
-        <i class="fa fa-share-alt"></i>
-        <a href="{% url "blog:post_share" post.id %}">
-        Share this post
-        </a>
-    </a>
-</div>
-<!-- entity_social -->
-{% recaptcha_init %}
+        <div class="container">
+            <div class="row">
+                <!-- ##### Post Content Area ##### -->
+                <div class="col-12 col-lg-9">
+                    <!-- Single Blog Area  -->
+                    <div class="single-blog-area blog-style-2 mb-50">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content">
+                            <div class="line"></div>
+                            {% for tag in post.tags.all %}
+                            <a href="{% url "blog:post_list_by_tag" tag.slug %}" class="post-tag" >{{ tag.name }}</a>
+                            {% if not forloop.last %} {% endif %}
+                            {% endfor %}
+                            <h4><a href="" class="post-headline mb-0">{{ post.title }}</a></h4>
+                            <div class="post-meta mb-50">
+                              <p>By <a href="">{{ post.author }}</a></p>
+                              <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="">Watched</a> </span>
+                                <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="">Comments</a> </span></p>
+                            </div>
+                            <p>{{ post.body | safe }}</p>
 
-      <div class="entity_thumb">
-          <img class="img-responsive" src="{{ post.image.url }}" height="200" width="350" alt="feature-top">
-      </div>
-      <!-- entity_thumb -->
+                        </div>
+                    </div>
 
-      <div class="entity_content">
-          <p>
-              {{ post.body | safe }}
-          </p>
-      </div>
-      <!-- entity_content -->
+                    <!-- About Author -->
+                    <div class="blog-post-author mt-100 d-flex">
+                        <div class="author-info">
+                            <div class="line"></div>
+                            <h4><a href="" class="author-name">Similar posts</a></h4>
+                            {% for post in similar_posts %}
+                            <p>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                            </p>
+                            {% empty %}
+                            <p>There are no similar posts yet.</p>
+                            {% endfor %}
+                        </div>
+                    </div>
 
-      <div class="entity_footer">
-          <div class="entity_tag">
-            {% for tag in post.tags.all %}
-            <span class="blank"><a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name }}</a></span>
-            {% if not forloop.last %} {% endif %}
-            {% endfor %}
-          </div>
-          <!-- entity_tag -->
+                    <!-- Comment Area Start -->
+                    <div class="comment_area clearfix mt-70">
+                        {% with comments.count as total_comments %}
+                        <h5 class="title">
+                        {{ total_comments }} Comments {{ total_comments|pluralize }}
+                        </h5>
+                        {% endwith %}
 
+                        <ol>
+                        {% if user.is_authenticated %}
+                        {% for comment in post.comments.all %}
+                            <!-- Single Comment Area -->
+                            <li class="single_comment_area">
+                                <!-- Comment Content -->
+                                <div class="comment-content d-flex">
+                                    <!-- Comment Author -->
+                                    <div class="comment-author">
 
-          <div class="entity_social">
-              <span><i class="fa fa-comments-o"></i>{{ post.comments.count }} <a href="#">Comments</a> </span>
-          </div>
-          <!-- entity_social -->
+                                        <img src="{{ user.profile.photo.url }}" alt="author">
+                                    </div>
+                                    <!-- Comment Meta -->
+                                    <div class="comment-meta">
+                                      Comment {{ forloop.counter }}
+                                        <a href="" class="post-date">{{ comment.created_date }}</a>
+                                        <p><a href="" class="post-author">{{ comment.author }}</a></p>
+                                        <p>{{ comment.body|linebreaks }}</p>
+                                        {% empty %}
+                                        <h2>No comments</h2>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
 
-
-      </div>
-      <!-- entity_footer -->
-
-  </div>
-  <!-- entity_wrapper -->
-  <br>
-  <h2>Similar posts</h2>
-  {% for post in similar_posts %}
-  <p>
-  <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-  </p>
-  {% empty %}
-  There are no similar posts yet.
-  {% endfor %}
-
-  <div class="readers_comment">
-    <div class="entity_inner__title header_purple">
-        {% with comments.count as total_comments %}
-        <h2>
-        {{ total_comments }} Comments {{ total_comments|pluralize }}
-        </h2>
-        {% endwith %}
-    </div>
-    <!-- entity_title -->
-    	{% if user.is_authenticated %}
-    {% for comment in post.comments.all %}
-    <div class="media">
-        <div class="media-body">
-            <h2 class="media-heading"> Comment {{ forloop.counter }} by {{ comment.author }}</a></h2>
-            <div class="date">{{ comment.created_date }}</div>
-            {{ comment.body|linebreaks }}
-            {% empty %}
-            <h2>No comments</h2>
+                    <div class="post-a-comment-area mt-70">
+                        <h5>Add a Comment</h5>
+                        <!-- Reply Form -->
+                        {% if new_comment %}
+                        <h2>Your comment has been added.</h2>
+                        {% else %}
+                        <div class="entity_comment_from">
+                          <form action="." method="post">
+                          {{ comment_form.as_p }}
+                          {% csrf_token %}
+                          <p><input type="submit" value="Add comment"></p>
+                        </form>
+                        </div>
+                        {% endif %}
+                        <!--Entity Comments From -->
+                        {% else %}
+                        <h2>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    {% endfor %}
-
-
-    <div class="entity_comments">
-    <div class="entity_inner__title header_black">
-        <h2>Add a Comment</h2>
-    </div>
-    <!--Entity Title -->
-    {% if new_comment %}
-    <h2>Your comment has been added.</h2>
-    {% else %}
-    <div class="entity_comment_from">
-      <form action="." method="post">
-      {{ comment_form.as_p }}
-      {% csrf_token %}
-      <p><input type="submit" value="Add comment"></p>
-    </form>
-    </div>
-    {% endif %}
-    <!--Entity Comments From -->
-    {% else %}
-    <h2>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</h2>
-    {% endif %}
-</div>
-
-</div>
+    <!-- ##### Single Blog Area End ##### -->
 {% endblock %}

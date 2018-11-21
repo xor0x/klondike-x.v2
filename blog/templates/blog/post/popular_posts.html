@@ -1,7 +1,15 @@
-<ul>
 {% for post in popular_posts %}
-<li>
-<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-</li>
+<div class="single-blog-post d-flex align-items-center widget-post">
+    <!-- Post Thumbnail -->
+    <div class="post-thumbnail">
+        <img src="{{ post.image.url }}" alt="">
+    </div>
+    <!-- Post Content -->
+    <div class="post-content">
+        <h4><a href="{{ post.get_absolute_url }}" class="post-headline">{{ post.title }}</a></h4>
+        <div class="post-meta">
+            <p><a href="{{ post.get_absolute_url }}">{{ post.publish }}</a></p>
+        </div>
+    </div>
+</div>
 {% endfor %}
-</ul>

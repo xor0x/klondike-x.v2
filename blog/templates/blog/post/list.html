@@ -1,151 +1,117 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
 {% load blog_tags %}
 {% load taggit_templatetags2_tags %}
 {% block content %}
 {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
 {% endif %}
-<div class="col-md-8">
 {% for post in posts%}
-<div class="entity_wrapper">
-    <div class="entity_title">
-        <h1><a href="{{ post.get_absolute_url }}" target="_self">{{ post.title }}</a>
-        </h1>
-    </div>
-    <!-- entity_title -->
-
-    <div class="entity_meta">
-        <a href="#">{{ post.publish }}</a> by {{ post.author }}
-    </div>
-    <!-- entity_meta -->
-
-
-    <div class="entity_thumb">
-        <img class="img-responsive" src="{{ post.image.url }}" alt="feature-top" height="300" width="400">
-    </div>
-
-    <div class="entity_content">
-        <p class="blockquote">
-          {{ post.summary | safe }}  <a href="{{ post.get_absolute_url }}"><h3>Read More</h3></a>
-
-        </p>
-    </div>
-    <!-- entity_content -->
-    <div class="entity_footer">
-      <div class="entity_tag">
-          {% for tag in post.tags.all %}
-          <span class="blank"><a href="{% url "blog:post_list_by_tag" tag.slug %}">{{ tag.name }}</a></span>
-          {% if not forloop.last %} {% endif %}
-          {% endfor %}
-      </div>
-        <!-- entity_tag -->
-
-        <div class="entity_social">
-            <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="#">Watched</a> </span>
-            <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="#">Comments</a> </span>
+<div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1000ms">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+            <div class="single-blog-thumbnail">
+                <img src="{{ post.image.url }}" alt="">
+                <div class="post-date">
+                    <a href="{{ post.get_absolute_url }}"><span>{{ post.publish }}</span></a>
+                </div>
+            </div>
         </div>
-        <!-- entity_social -->
-
+        <div class="col-12 col-md-6">
+            <!-- Blog Content -->
+            <div class="single-blog-content">
+                <div class="line"></div>
+                {% for tag in post.tags.all %}
+                <a href="{% url "blog:post_list_by_tag" tag.slug %}" class="post-tag" >{{ tag.name }}</a>
+                {% if not forloop.last %} {% endif %}
+                {% endfor %}
+                <h4><a href="{{ post.get_absolute_url }}" class="post-headline">{{ post.title }}</a></h4>
+                <p>{{ post.summary | safe }}
+                  <div class="load-more-btn mt-100 wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1000ms">
+                        <a href="{{ post.get_absolute_url }}" class="btn original-btn">Read More</a>
+                  </div></a></p>
+                <div class="post-meta">
+                    <p>By <a href="#">{{ post.author }}</a></p>
+                    <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="#">Watched</a> </span>
+                      <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="#">Comments</a> </span></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<!-- entity_wrapper -->
-<hr>
 {% endfor %}
-{% endblock %}
-
 
 {% block page %}
 {% include  "paginator.html" with page=posts %}
-</div>
 {% endblock %}
 
+{% endblock %}
+
+
+
 {% block homeblock %}
-<div class="col-md-4">
+<div class="col-12 col-md-4 col-lg-3">
+    <div class="post-sidebar-area">
 
-  <div class="widget m30">
-      <div class="widget_title widget_black">
-          <h2><a href="#">Latest posts</a></h2>
-      </div>
+        <!-- Widget Area -->
+        <div class="sidebar-widget-area">
+            <h5 class="title">Latest Posts</h5>
 
-      <div class="widget_body">
-        <h3 class="media-heading">
-        {% show_latest_posts 3 %}
-      </h3>
-      </div>
-      <hr>
-  </div>
+            <div class="widget-content">
 
-<div class="widget">
-    <div class="widget_title widget_black">
-        <h2><a href="#">Popular Posts</a></h2>
-    </div>
-    <div class="media">
-        <div class="media-body">
-            <h3 class="media-heading">
-              {% show_popular_posts 3 %}
-            </h3>
+                <!-- Single Blog Post -->
+                {% show_latest_posts 3 %}
+            </div>
         </div>
-    </div>
-    <hr>
-</div>
-<!-- Popular News -->
 
+        <!-- Widget Area -->
+        <div class="sidebar-widget-area">
+            <h5 class="title">Popular Posts</h5>
 
+            <div class="widget-content">
 
-<div class="widget m30">
-    <div class="widget_title widget_black">
-        <h2><a href="#">Most commented</a></h2>
-    </div>
-    <div class="media">
-        <div class="media-body">
-            <h3 class="media-heading">
-              {% get_most_commented_posts as most_commented_posts %}
-              <ul>
+                <!-- Single Blog Post -->
+                {% show_popular_posts 3 %}
+            </div>
+        </div>
+
+        <!-- Widget Area -->
+        <div class="sidebar-widget-area">
+            <h5 class="title">Most commented</h5>
+
+            <div class="widget-content">
+
+                <!-- Single Blog Post -->
+                {% get_most_commented_posts as most_commented_posts %}
                 {% for post in most_commented_posts %}
-                <p><li>
-                  <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                </li>
-                <div class="media_social">
-                    <span><i class="fa fa-comments-o"></i><a href="#">{{ post.comments.count }}</a> Comments</span>
-                </div></p>
+                <div class="single-blog-post d-flex align-items-center widget-post">
+                    <!-- Post Thumbnail -->
+                    <div class="post-thumbnail">
+                        <img src="{{ post.image.url }}" alt="">
+                    </div>
+                    <!-- Post Content -->
+                    <div class="post-content">
+                        <h4><a href="{{ post.get_absolute_url }}" class="post-headline">{{ post.title }}</a></h4>
+                        <div class="post-meta">
+                            <p><a href="{{ post.get_absolute_url }}">{{ post.publish }}</a></p>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
-              </ul>
-            </h3>
+            </div>
+        </div>
 
-
+        <!-- Widget Area -->
+        <div class="sidebar-widget-area">
+            <h5 class="title">Tags</h5>
+            <div class="widget-content">
+                <ul class="tags">
+                  {% for tag in tags.all %}
+                  <li><a href="{% url 'blog:post_list_by_tag' tag.slug %}">{{ tag.name|upper }}</a></li>
+                  {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-<!-- Most Commented News -->
-
-<div class="widget m30">
-    <div class="widget_title widget_black">
-        <h2><a href="#">Links</a></h2>
-    </div>
-    <div class="media">
-        <div class="media-body">
-            <h3 class="media-heading">
-              <ul>
-                {% for link in link_list %}
-                <li>
-                  <p><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></p>
-                </li>
-
-
-                {% endfor %}
-              </ul>
-            </h3>
-
-
-        </div>
-    </div>
-</div>
-<!-- Links -->
-
-
-
-
-
-<!--Advertisement-->
 </div>
 {% endblock %}
