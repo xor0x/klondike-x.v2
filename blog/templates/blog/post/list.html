@@ -3,6 +3,7 @@
 {% load blog_tags %}
 {% load taggit_templatetags2_tags %}
 {% block content %}
+
 {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
 {% endif %}
@@ -47,6 +48,25 @@
 
 {% endblock %}
 
+{% block sider_header %}
+            <!-- Single Slide -->
+            {% for post in popular_posts_header %}
+            <div class="single-hero-slide bg-img" style="background-image: url({{ post.image.url }});">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="slide-content text-center">
+                                <!--<div class="post-tag">
+                                    <a href="#" data-animation="fadeInUp">lifestyle</a>
+                                </div>-->
+                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+{% endblock %}
 
 
 {% block homeblock %}

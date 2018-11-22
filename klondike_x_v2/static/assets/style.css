@@ -467,7 +467,7 @@ img {
   .hero-slides .single-hero-slide {
     position: relative;
     z-index: 1;
-    height: 670px; }
+    height: 350px; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .hero-slides .single-hero-slide {
         height: 500px; } }

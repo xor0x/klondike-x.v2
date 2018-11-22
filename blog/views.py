@@ -21,6 +21,7 @@ class PostListView(ListView):
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
     link_list = BlockLinks.objects.all()
+    popular_posts_header = Post.published.get_queryset().order_by('watch_total', '-publish')[:3]
     tag = None
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
@@ -36,7 +37,8 @@ def post_list(request, tag_slug=None):
     ctx = {'posts':posts,
             'page':page,
             'tag':tag,
-            'link_list':link_list}
+            'link_list':link_list,
+            'popular_posts_header':popular_posts_header}
     return render(request, 'blog/post/list.html', ctx)
 
 
