@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'snowpenguin.django.recaptcha2',
     'rosetta',
+    'modeltranslation',
 ]
 
 
