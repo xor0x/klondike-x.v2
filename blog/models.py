@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from taggit.managers import TaggableManager
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.translation import gettext_lazy as _
 
 
 class PublishedManager(models.Manager):
@@ -17,19 +18,19 @@ class Post(models.Model):
     ('draft', 'Draft'),
     ('published', 'Published')
     }
-    title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250, unique_for_date='publish')
+    title = models.CharField(_('title'), max_length=250, db_index=True)
+    slug = models.SlugField(_('slug'), max_length=250, db_index=True, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
-    image = models.ImageField(upload_to="images/")
-    body = RichTextUploadingField()
-    publish = models.DateTimeField(default=timezone.now)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+    image = models.ImageField(_('image'), upload_to="images/")
+    body = RichTextUploadingField(_('body'))
+    publish = models.DateTimeField(_('publish'), default=timezone.now)
+    created = models.DateTimeField(_('created'), auto_now_add=True)
+    updated = models.DateTimeField(_('updated'), auto_now=True)
+    status = models.CharField(_('status'), max_length=10, choices=STATUS_CHOICES, default='draft')
     objects = models.Manager()
     published = PublishedManager()
-    tags = TaggableManager()
-    watch_total = models.IntegerField(default=1)
+    tags = TaggableManager(_('tags'))
+    watch_total = models.IntegerField(_('watch_total'), default=1)
 
     class Meta:
         ordering = ('-publish',)

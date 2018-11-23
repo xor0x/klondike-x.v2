@@ -1,11 +1,12 @@
 {% extends "blog/base.html" %}
+{% load i18n %}
 {% load staticfiles %}
 {% load blog_tags %}
 {% load taggit_templatetags2_tags %}
 {% block content %}
 
 {% if tag %}
-<h2>Posts tagged with "{{ tag.name }}"</h2>
+<h2>{% trans "Posts tagged with" %} "{{ tag.name }}"</h2>
 {% endif %}
 {% for post in posts%}
 <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1000ms">
@@ -29,12 +30,12 @@
                 <h4><a href="{{ post.get_absolute_url }}" class="post-headline">{{ post.title }}</a></h4>
                 <p>{{ post.summary | safe }}
                   <div class="load-more-btn mt-100 wow fadeInUp" data-wow-delay="0.7s" data-wow-duration="1000ms">
-                        <a href="{{ post.get_absolute_url }}" class="btn original-btn">Read More</a>
+                        <a href="{{ post.get_absolute_url }}" class="btn original-btn">{% trans "Read More" %}</a>
                   </div></a></p>
                 <div class="post-meta">
                     <p>By <a href="#">{{ post.author }}</a></p>
-                    <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="#">Watched</a> </span>
-                      <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="#">Comments</a> </span></p>
+                    <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="#">{% trans "Watched" %}</a> </span>
+                      <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="#">{% trans "Comments" %}</a> </span></p>
                 </div>
             </div>
         </div>
@@ -75,7 +76,7 @@
 
         <!-- Widget Area -->
         <div class="sidebar-widget-area">
-            <h5 class="title">Latest Posts</h5>
+            <h5 class="title">{% trans "Latest Posts" %}</h5>
 
             <div class="widget-content">
 
@@ -86,7 +87,7 @@
 
         <!-- Widget Area -->
         <div class="sidebar-widget-area">
-            <h5 class="title">Popular Posts</h5>
+            <h5 class="title">{% trans "Popular Posts" %}</h5>
 
             <div class="widget-content">
 
@@ -97,7 +98,7 @@
 
         <!-- Widget Area -->
         <div class="sidebar-widget-area">
-            <h5 class="title">Most commented</h5>
+            <h5 class="title">{% trans "Most commented" %}</h5>
 
             <div class="widget-content">
 
@@ -123,7 +124,7 @@
 
         <!-- Widget Area -->
         <div class="sidebar-widget-area">
-            <h5 class="title">Tags</h5>
+            <h5 class="title">{% trans "Tags" %}</h5>
             <div class="widget-content">
                 <ul class="tags">
                   {% for tag in tags.all %}
