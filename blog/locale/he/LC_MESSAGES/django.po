@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 15:06+0200\n"
-"PO-Revision-Date: 2018-11-23 13:13+0000\n"
+"POT-Creation-Date: 2018-11-23 20:48+0200\n"
+"PO-Revision-Date: 2018-11-24 05:51+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,45 +19,109 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: blog/models.py:21
+#: blog/models.py:22
 msgid "title"
 msgstr "כותרת"
 
-#: blog/models.py:22
+#: blog/models.py:23
 msgid "slug"
 msgstr "slug"
 
-#: blog/models.py:24
+#: blog/models.py:25
 msgid "image"
 msgstr "תמונה"
 
-#: blog/models.py:25
+#: blog/models.py:26
 msgid "body"
 msgstr "גוּף"
 
-#: blog/models.py:26
+#: blog/models.py:27
 msgid "publish"
 msgstr "לפרסם"
 
-#: blog/models.py:27
+#: blog/models.py:28
 msgid "created"
 msgstr "שנוצר"
 
-#: blog/models.py:28
+#: blog/models.py:29
 msgid "updated"
 msgstr "מעדכן"
 
-#: blog/models.py:29
+#: blog/models.py:30
 msgid "status"
 msgstr "סטטוס"
 
-#: blog/models.py:32
+#: blog/models.py:33
 msgid "tags"
 msgstr "תגים"
 
-#: blog/models.py:33
+#: blog/models.py:34
 msgid "watch_total"
 msgstr "סך הכל"
+
+#: blog/templates/blog/post/detail.html:22
+msgid "Share this post"
+msgstr "שתף את הפוסט"
+
+#: blog/templates/blog/post/detail.html:45
+#: blog/templates/blog/post/list.html:37
+msgid "Watched"
+msgstr "הסתכלו"
+
+#: blog/templates/blog/post/detail.html:46
+#: blog/templates/blog/post/list.html:38
+msgid "Comments"
+msgstr "הערות"
+
+#: blog/templates/blog/post/detail.html:57
+#| msgid "Popular Posts"
+msgid "Similar posts"
+msgstr "פוסטים דומים"
+
+#: blog/templates/blog/post/detail.html:63
+msgid "There are no similar posts yet."
+msgstr "אין עדיין פוסטים דומים."
+
+#: blog/templates/blog/post/detail.html:72
+#| msgid "Comments"
+msgid "Comment/"
+msgstr "הערות"
+
+#: blog/templates/blog/post/detail.html:90
+#| msgid "Comments"
+msgid "Comment"
+msgstr "הערות"
+
+#: blog/templates/blog/post/detail.html:95
+#| msgid "Most commented"
+msgid "No comment"
+msgstr "אין תגובה"
+
+#: blog/templates/blog/post/detail.html:104
+#| msgid "Comments"
+msgid "Add a Comment"
+msgstr "הוסף תגובה"
+
+#: blog/templates/blog/post/detail.html:107
+msgid "Your comment has been added."
+msgstr "ההערה שלך נוספה."
+
+#: blog/templates/blog/post/detail.html:113
+#| msgid "Most commented"
+msgid "Add comment"
+msgstr "הוסף תגובה"
+
+#: blog/templates/blog/post/detail.html:119
+msgid "Please"
+msgstr "אנא"
+
+#: blog/templates/blog/post/detail.html:119
+msgid "Register"
+msgstr "הירשם"
+
+#: blog/templates/blog/post/detail.html:119
+msgid "to view/add comments"
+msgstr "כדי להציג / להוסיף הערות"
 
 #: blog/templates/blog/post/list.html:9
 msgid "Posts tagged with"
@@ -66,14 +130,6 @@ msgstr "פוסטים שתייגת עם"
 #: blog/templates/blog/post/list.html:33
 msgid "Read More"
 msgstr "קרא עוד"
-
-#: blog/templates/blog/post/list.html:37
-msgid "Watched"
-msgstr "הסתכלו"
-
-#: blog/templates/blog/post/list.html:38
-msgid "Comments"
-msgstr "הערות"
 
 #: blog/templates/blog/post/list.html:79
 msgid "Latest Posts"
@@ -90,3 +146,67 @@ msgstr "רוב הגיב"
 #: blog/templates/blog/post/list.html:127
 msgid "Tags"
 msgstr "תגים"
+
+#: blog/templates/blog/post/search.html:6
+msgid "Posts containing"
+msgstr "פוסטים המכילות"
+
+#: blog/templates/blog/post/search.html:9
+msgid "Found"
+msgstr "מצאתי"
+
+#: blog/templates/blog/post/search.html:9
+msgid "result"
+msgstr "תוצאה"
+
+#: blog/templates/blog/post/search.html:16
+msgid "There are no results for your query."
+msgstr "אין תוצאות עבור השאילתה שלך."
+
+#: blog/templates/blog/post/search.html:18
+msgid "Search again"
+msgstr "חפש שוב"
+
+#: blog/templates/blog/post/search.html:20
+msgid "Search for posts"
+msgstr "חפש פוסטים"
+
+#: blog/templates/blog/post/search.html:23
+msgid "Search"
+msgstr "לחפש"
+
+#: blog/templates/blog/post/share.html:6
+msgid "E-mail successfully sent"
+msgstr "דואר אלקטרוני נשלח בהצלחה"
+
+#: blog/templates/blog/post/share.html:8
+msgid "was successfully sent to"
+msgstr "נשלח בהצלחה אל"
+
+#: blog/templates/blog/post/share.html:11
+msgid "Share"
+msgstr "שתף"
+
+#: blog/templates/blog/post/share.html:11
+msgid "by e-mail"
+msgstr "בדואר האלקטרוני"
+
+#: blog/templates/blog/post/share.html:15
+msgid "Send e-mail"
+msgstr "שלח אימייל"
+
+#: blog/templates/paginator.html:5
+msgid "Previous"
+msgstr "קודם"
+
+#: blog/templates/paginator.html:8
+msgid "Page"
+msgstr "עמוד"
+
+#: blog/templates/paginator.html:8
+msgid "of"
+msgstr "מתוך"
+
+#: blog/templates/paginator.html:11
+msgid "Next"
+msgstr "הבא"

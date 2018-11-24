@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 15:06+0200\n"
+"POT-Creation-Date: 2018-11-23 20:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,102 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/models.py:21
+#: blog/models.py:22
 msgid "title"
 msgstr ""
 
-#: blog/models.py:22
+#: blog/models.py:23
 msgid "slug"
 msgstr ""
 
-#: blog/models.py:24
+#: blog/models.py:25
 msgid "image"
 msgstr ""
 
-#: blog/models.py:25
+#: blog/models.py:26
 msgid "body"
 msgstr ""
 
-#: blog/models.py:26
+#: blog/models.py:27
 msgid "publish"
 msgstr ""
 
-#: blog/models.py:27
+#: blog/models.py:28
 msgid "created"
 msgstr ""
 
-#: blog/models.py:28
+#: blog/models.py:29
 msgid "updated"
 msgstr ""
 
-#: blog/models.py:29
+#: blog/models.py:30
 msgid "status"
 msgstr ""
 
-#: blog/models.py:32
+#: blog/models.py:33
 msgid "tags"
 msgstr ""
 
-#: blog/models.py:33
+#: blog/models.py:34
 msgid "watch_total"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:22
+msgid "Share this post"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:45
+#: blog/templates/blog/post/list.html:37
+msgid "Watched"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:46
+#: blog/templates/blog/post/list.html:38
+msgid "Comments"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:57
+msgid "Similar posts"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:63
+msgid "There are no similar posts yet."
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:72
+msgid "Comment/"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:90
+msgid "Comment"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:95
+msgid "No comment"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:104
+msgid "Add a Comment"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:107
+msgid "Your comment has been added."
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:113
+msgid "Add comment"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:119
+msgid "Please"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:119
+msgid "Register"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:119
+msgid "to view/add comments"
 msgstr ""
 
 #: blog/templates/blog/post/list.html:9
@@ -64,14 +122,6 @@ msgstr ""
 
 #: blog/templates/blog/post/list.html:33
 msgid "Read More"
-msgstr ""
-
-#: blog/templates/blog/post/list.html:37
-msgid "Watched"
-msgstr ""
-
-#: blog/templates/blog/post/list.html:38
-msgid "Comments"
 msgstr ""
 
 #: blog/templates/blog/post/list.html:79
@@ -88,4 +138,68 @@ msgstr ""
 
 #: blog/templates/blog/post/list.html:127
 msgid "Tags"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:6
+msgid "Posts containing"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:9
+msgid "Found"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:9
+msgid "result"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:16
+msgid "There are no results for your query."
+msgstr ""
+
+#: blog/templates/blog/post/search.html:18
+msgid "Search again"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:20
+msgid "Search for posts"
+msgstr ""
+
+#: blog/templates/blog/post/search.html:23
+msgid "Search"
+msgstr ""
+
+#: blog/templates/blog/post/share.html:6
+msgid "E-mail successfully sent"
+msgstr ""
+
+#: blog/templates/blog/post/share.html:8
+msgid "was successfully sent to"
+msgstr ""
+
+#: blog/templates/blog/post/share.html:11
+msgid "Share"
+msgstr ""
+
+#: blog/templates/blog/post/share.html:11
+msgid "by e-mail"
+msgstr ""
+
+#: blog/templates/blog/post/share.html:15
+msgid "Send e-mail"
+msgstr ""
+
+#: blog/templates/paginator.html:5
+msgid "Previous"
+msgstr ""
+
+#: blog/templates/paginator.html:8
+msgid "Page"
+msgstr ""
+
+#: blog/templates/paginator.html:8
+msgid "of"
+msgstr ""
+
+#: blog/templates/paginator.html:11
+msgid "Next"
 msgstr ""

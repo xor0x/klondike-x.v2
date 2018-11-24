@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load i18n %}
 {% load recaptcha2 %}
 {% load blog_tags %}
 {% block title %}
@@ -18,7 +19,7 @@
               <a href="#" class="icons-sm sh-ic">
         <i class="fa fa-share-alt"></i>
         <a href="{% url "blog:post_share" post.id %}">
-        Share this post
+        {% trans "Share this post" %}
         </a>
     </a>
                 <img src="{{ post.image.url }}" alt="">
@@ -41,8 +42,8 @@
                             <h4><a href="" class="post-headline mb-0">{{ post.title }}</a></h4>
                             <div class="post-meta mb-50">
                               <p>By <a href="">{{ post.author }}</a></p>
-                              <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="">Watched</a> </span>
-                                <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="">Comments</a> </span></p>
+                              <p>  <span><i class="fa fa-eye"></i> {{ post.watch_total }} <a href="">{% trans "Watched" %}</a> </span>
+                                <span><i class="fa fa-comments-o"></i> {{ post.comments.count }} <a href="">{% trans "Comments" %}</a> </span></p>
                             </div>
                             <p>{{ post.body | safe }}</p>
 
@@ -53,13 +54,13 @@
                     <div class="blog-post-author mt-100 d-flex">
                         <div class="author-info">
                             <div class="line"></div>
-                            <h4><a href="" class="author-name">Similar posts</a></h4>
+                            <h4><a href="" class="author-name">{% trans "Similar posts" %}</a></h4>
                             {% for post in similar_posts %}
                             <p>
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                             </p>
                             {% empty %}
-                            <p>There are no similar posts yet.</p>
+                            <p>{% trans "There are no similar posts yet." %}</p>
                             {% endfor %}
                         </div>
                     </div>
@@ -68,7 +69,7 @@
                     <div class="comment_area clearfix mt-70">
                         {% with comments.count as total_comments %}
                         <h5 class="title">
-                        {{ total_comments }} Comment/{{ total_comments|pluralize }}
+                        {{ total_comments }} {% trans "Comment/" %}{{ total_comments|pluralize }}
                         </h5>
                         {% endwith %}
 
@@ -86,12 +87,12 @@
                                     </div>
                                     <!-- Comment Meta -->
                                     <div class="comment-meta">
-                                      Comment {{ forloop.counter }}
+                                      {% trans "Comment" %} {{ forloop.counter }}
                                         <a href="" class="post-date">{{ comment.created_date }}</a>
                                         <p><a href="" class="post-author">{{ comment.author }}</a></p>
                                         <p>{{ comment.body|linebreaks }}</p>
                                         {% empty %}
-                                        <h2>No comments</h2>
+                                        <h2>{% trans "No comment" %}</h2>
                                     </div>
                                 </div>
                             </li>
@@ -100,22 +101,22 @@
                     </div>
 
                     <div class="post-a-comment-area mt-70">
-                        <h5>Add a Comment</h5>
+                        <h5>{% trans "Add a Comment" %}</h5>
                         <!-- Reply Form -->
                         {% if new_comment %}
-                        <h2>Your comment has been added.</h2>
+                        <h2>{% trans "Your comment has been added." %}</h2>
                         {% else %}
                         <div class="entity_comment_from">
                           <form action="." method="post">
                           {{ comment_form.as_p }}
                           {% csrf_token %}
-                          <p><input type="submit" value="Add comment"></p>
+                          <p><input type="submit" value="{% trans "Add comment" %}"></p>
                         </form>
                         </div>
                         {% endif %}
                         <!--Entity Comments From -->
                         {% else %}
-                        <p>Please <a href="{% url 'register' %}" class="genric-btn success-border circle">Register</a> to view/add comments</p>
+                        <p>{% trans "Please" %} <a href="{% url 'register' %}" class="genric-btn success-border circle">{% trans "Register" %}</a> {% trans "to view/add comments" %}</p>
                         {% endif %}
                     </div>
                 </div>
