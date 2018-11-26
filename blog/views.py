@@ -107,3 +107,7 @@ def post_search(request):
             results = Post.objects.annotate(search=search_vector, rank=SearchRank(search_vector, search_query)).filter(search=search_query).order_by('-rank')
     ctx = {'form':form, 'query':query, 'results':results}
     return render(request, 'blog/post/search.html', ctx)
+
+
+def about(request):
+    return render(request, 'about.html')

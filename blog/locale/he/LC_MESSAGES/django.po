@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 20:48+0200\n"
+"POT-Creation-Date: 2018-11-26 12:15+0200\n"
 "PO-Revision-Date: 2018-11-24 05:51+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,6 @@ msgid "Comments"
 msgstr "הערות"
 
 #: blog/templates/blog/post/detail.html:57
-#| msgid "Popular Posts"
 msgid "Similar posts"
 msgstr "פוסטים דומים"
 
@@ -83,22 +82,18 @@ msgid "There are no similar posts yet."
 msgstr "אין עדיין פוסטים דומים."
 
 #: blog/templates/blog/post/detail.html:72
-#| msgid "Comments"
 msgid "Comment/"
 msgstr "הערות"
 
 #: blog/templates/blog/post/detail.html:90
-#| msgid "Comments"
 msgid "Comment"
 msgstr "הערות"
 
 #: blog/templates/blog/post/detail.html:95
-#| msgid "Most commented"
 msgid "No comment"
 msgstr "אין תגובה"
 
 #: blog/templates/blog/post/detail.html:104
-#| msgid "Comments"
 msgid "Add a Comment"
 msgstr "הוסף תגובה"
 
@@ -107,7 +102,6 @@ msgid "Your comment has been added."
 msgstr "ההערה שלך נוספה."
 
 #: blog/templates/blog/post/detail.html:113
-#| msgid "Most commented"
 msgid "Add comment"
 msgstr "הוסף תגובה"
 
@@ -123,6 +117,26 @@ msgstr "הירשם"
 msgid "to view/add comments"
 msgstr "כדי להציג / להוסיף הערות"
 
+#: blog/templates/blog/post/detail.html:131
+#: blog/templates/blog/post/list.html:79
+msgid "Latest Posts"
+msgstr "פוסטים אחרונים"
+
+#: blog/templates/blog/post/detail.html:142
+#: blog/templates/blog/post/list.html:90
+msgid "Popular Posts"
+msgstr "פוסטים פופולריות"
+
+#: blog/templates/blog/post/detail.html:153
+#: blog/templates/blog/post/list.html:101
+msgid "Most commented"
+msgstr "רוב הגיב"
+
+#: blog/templates/blog/post/detail.html:179
+#: blog/templates/blog/post/list.html:127
+msgid "Tags"
+msgstr "תגים"
+
 #: blog/templates/blog/post/list.html:9
 msgid "Posts tagged with"
 msgstr "פוסטים שתייגת עם"
@@ -131,21 +145,9 @@ msgstr "פוסטים שתייגת עם"
 msgid "Read More"
 msgstr "קרא עוד"
 
-#: blog/templates/blog/post/list.html:79
-msgid "Latest Posts"
-msgstr "פוסטים אחרונים"
-
-#: blog/templates/blog/post/list.html:90
-msgid "Popular Posts"
-msgstr "פוסטים פופולריות"
-
-#: blog/templates/blog/post/list.html:101
-msgid "Most commented"
-msgstr "רוב הגיב"
-
-#: blog/templates/blog/post/list.html:127
-msgid "Tags"
-msgstr "תגים"
+#: blog/templates/blog/post/list.html:138
+msgid "Links"
+msgstr ""
 
 #: blog/templates/blog/post/search.html:6
 msgid "Posts containing"

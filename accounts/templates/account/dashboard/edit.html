@@ -1,4 +1,5 @@
 {% extends "account/dashboard.html" %}
+{% load i18n %}
 {% block profile %}
 <div class="tab-content">
 
@@ -19,34 +20,34 @@
       <div class="form-group">
 
         <div class="col-xs-6">
-          <label for="first_name"><h4>First name</h4></label><br>
+          <label for="first_name"><h4>{% trans "First name" %}</h4></label><br>
           {{ user_form.first_name }}
         </div>
       </div>
       <div class="form-group">
 
         <div class="col-xs-6">
-          <label for="last_name"><h4>Last name</h4></label><br>
+          <label for="last_name"><h4>{% trans "Last name" %}</h4></label><br>
           {{ user_form.last_name }}
         </div>
       </div>
 
       <div class="col-xs-6">
-        <label for="email"><h4>Email</h4></label><br>
+        <label for="email"><h4>{% trans "Email" %}</h4></label><br>
         {{ user_form.email }}
       </div>
     </div>
     <div class="form-group">
 
       <div class="col-xs-6">
-        <label for="email"><h4>Date of Birth</h4></label><br>
+        <label for="email"><h4>{% trans "Date of Birth" %}</h4></label><br>
         {{ profile_form.date_of_birth }}
       </div>
     </div>
     <div class="form-group">
 
       <div class="col-xs-6">
-        <label for="email"><h4>Upload a different photo...</h4></label><br>
+        <label for="email"><h4>{% trans "Upload a different photo..." %}</h4></label><br>
         {{ profile_form.photo }}
       </div>
     </div>
@@ -56,7 +57,7 @@
     <div class="form-group">
       <div class="col-xs-12">
         <br>
-        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> {% trans "Save" %}</button>
       </div>
     </div>
   </form>

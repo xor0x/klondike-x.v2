@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-23 20:48+0200\n"
+"POT-Creation-Date: 2018-11-26 12:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -116,6 +116,26 @@ msgstr ""
 msgid "to view/add comments"
 msgstr ""
 
+#: blog/templates/blog/post/detail.html:131
+#: blog/templates/blog/post/list.html:79
+msgid "Latest Posts"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:142
+#: blog/templates/blog/post/list.html:90
+msgid "Popular Posts"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:153
+#: blog/templates/blog/post/list.html:101
+msgid "Most commented"
+msgstr ""
+
+#: blog/templates/blog/post/detail.html:179
+#: blog/templates/blog/post/list.html:127
+msgid "Tags"
+msgstr ""
+
 #: blog/templates/blog/post/list.html:9
 msgid "Posts tagged with"
 msgstr ""
@@ -124,20 +144,8 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: blog/templates/blog/post/list.html:79
-msgid "Latest Posts"
-msgstr ""
-
-#: blog/templates/blog/post/list.html:90
-msgid "Popular Posts"
-msgstr ""
-
-#: blog/templates/blog/post/list.html:101
-msgid "Most commented"
-msgstr ""
-
-#: blog/templates/blog/post/list.html:127
-msgid "Tags"
+#: blog/templates/blog/post/list.html:138
+msgid "Links"
 msgstr ""
 
 #: blog/templates/blog/post/search.html:6

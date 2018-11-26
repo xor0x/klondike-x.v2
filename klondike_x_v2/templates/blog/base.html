@@ -150,7 +150,7 @@
                                         </ul>
                                     </li>
 
-                                    <li><a href="about-us.html">{% trans "About Us" %}</a></li>
+                                    <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
 
                                       {% if user.is_authenticated %}
                                       <li><a class="genric-btn success-border circle" href="javascript:{document.getElementById('logout').submit()}"> {% trans "Logout" %}</a></li>

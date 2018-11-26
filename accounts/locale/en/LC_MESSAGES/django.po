@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-26 12:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/templates/account/dashboard.html:3
+#: accounts/templates/account/dashboard.html:5
+msgid "Dashboard"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:21
+msgid "Profile"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:22
+msgid "Edit profile"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:23
+msgid "Change Password"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:51
+#: accounts/templates/account/dashboard/edit.html:23
+msgid "First name"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:58
+#: accounts/templates/account/dashboard/edit.html:30
+msgid "Last name"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:64
+#: accounts/templates/account/dashboard/edit.html:36
+msgid "Email"
+msgstr ""
+
+#: accounts/templates/account/dashboard.html:71
+#: accounts/templates/account/dashboard/edit.html:43
+msgid "Date of Birth"
+msgstr ""
+
+#: accounts/templates/account/dashboard/edit.html:50
+msgid "Upload a different photo..."
+msgstr ""
+
+#: accounts/templates/account/dashboard/edit.html:60
+msgid "Save"
+msgstr ""
+
+#: accounts/templates/account/login.html:3
+#: accounts/templates/account/login.html:5
+#: accounts/templates/account/login.html:10
+msgid "Log-in"
+msgstr ""
+
+#: accounts/templates/account/login.html:6
+msgid "Please, use the following form to log-in"
+msgstr ""
+
+#: accounts/templates/account/register.html:4
+#: accounts/templates/account/register.html:7
+msgid "Create an account"
+msgstr ""
+
+#: accounts/templates/account/register.html:8
+msgid "Please, sign up using the following form"
+msgstr ""
+
+#: accounts/templates/account/register.html:12
+msgid "Create my account"
+msgstr ""
+
+#: accounts/templates/account/register_done.html:3
+#: accounts/templates/account/register_done.html:5
+msgid "Welcome"
+msgstr ""
+
+#: accounts/templates/account/register_done.html:6
+msgid "Your account has been successfully created"
+msgstr ""
+
+#: accounts/templates/account/register_done.html:6
+msgid "Now you can"
+msgstr ""
+
+#: accounts/templates/account/register_done.html:6
+msgid "log in"
+msgstr ""

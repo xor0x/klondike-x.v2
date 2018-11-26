@@ -18,6 +18,7 @@ urlpatterns = i18n_patterns(
     path('rosetta/', include('rosetta.urls')),
     path('',views.post_list, name='home'),
     path('blog/', include('blog.urls', namespace='blog')),
+    path('about/', views.about, name='about'),
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('account/', include('accounts.urls')),
     path('account/', include('django.contrib.auth.urls')),
