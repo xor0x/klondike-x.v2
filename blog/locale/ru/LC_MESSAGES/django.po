@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 20:06+0200\n"
-"PO-Revision-Date: 2018-11-24 05:41+0000\n"
+"POT-Creation-Date: 2018-11-27 20:26+0200\n"
+"PO-Revision-Date: 2018-11-27 18:18+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -149,7 +149,7 @@ msgstr "Прочитайте больше"
 
 #: blog/templates/blog/post/list.html:138
 msgid "Links"
-msgstr ""
+msgstr "Ссылки"
 
 #: blog/templates/blog/post/search.html:6
 msgid "Posts containing"

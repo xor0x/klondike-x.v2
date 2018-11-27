@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 20:06+0200\n"
+"POT-Creation-Date: 2018-11-27 20:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/forms.py:15
+msgid "Password"
+msgstr ""
+
+#: accounts/forms.py:16
+msgid "Repeat Password"
+msgstr ""
+
+#: accounts/forms.py:17
+msgid "Captcha"
+msgstr ""
 
 #: accounts/templates/account/dashboard.html:3
 #: accounts/templates/account/dashboard.html:5

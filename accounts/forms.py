@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .models import Profile
 from snowpenguin.django.recaptcha2.fields import ReCaptchaField
 from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
+from django.utils.translation import gettext_lazy as _
 
 
 class LoginForm(forms.Form):
@@ -11,9 +12,9 @@ class LoginForm(forms.Form):
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Repeat Password', widget=forms.PasswordInput)
-    captcha = ReCaptchaField(widget=ReCaptchaWidget())
+    password = forms.CharField(label=_('Password'), widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_('Repeat Password'), widget=forms.PasswordInput)
+    captcha = ReCaptchaField(widget=ReCaptchaWidget(), label=_('Captcha'))
 
     class Meta:
         model = User
