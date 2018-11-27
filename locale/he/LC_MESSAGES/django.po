@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-26 12:15+0200\n"
+"POT-Creation-Date: 2018-11-27 20:06+0200\n"
 "PO-Revision-Date: 2018-11-23 13:09+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,8 +40,8 @@ msgid "Site Map"
 msgstr "מפת האתר"
 
 #: klondike_x_v2/templates/blog/base.html:135
-msgid "Feed"
-msgstr "Feed"
+msgid "RSS"
+msgstr ""
 
 #: klondike_x_v2/templates/blog/base.html:141
 msgid "Language"
@@ -68,3 +68,6 @@ msgstr "התחברות"
 #: klondike_x_v2/templates/blog/base.html:165
 msgid "Register"
 msgstr "להרשם"
+
+#~ msgid "Feed"
+#~ msgstr "Feed"
