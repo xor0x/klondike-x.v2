@@ -7,11 +7,9 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.translation import gettext_lazy as _
 
 
-
 class PublishedManager(models.Manager):
     def get_queryset(self):
-        return super(PublishedManager, self).get_queryset()\
-        .filter(status='published')
+        return super(PublishedManager, self).get_queryset().filter(status='published')
 
 
 class Post(models.Model):
@@ -23,7 +21,7 @@ class Post(models.Model):
     slug = models.SlugField(_('slug'), max_length=250, db_index=True, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     image = models.ImageField(_('image'), upload_to="images/")
-    body = RichTextUploadingField(_('body'))
+    body = RichTextUploadingField(_('body'), blank=True)
     publish = models.DateTimeField(_('publish'), default=timezone.now)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     updated = models.DateTimeField(_('updated'), auto_now=True)

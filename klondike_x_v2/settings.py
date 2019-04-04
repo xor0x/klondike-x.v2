@@ -99,8 +99,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #os.path.join(BASE_DIR, 'templates')
-            'klondike_x_v2/templates'
+            os.path.join(BASE_DIR, 'templates')
+            # 'klondike_x_v2/templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -155,6 +155,7 @@ LANGUAGES = (
     ('ru', _('Russian')),
     ('he', _('Hebrew')),
 )
+
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
